@@ -3,7 +3,7 @@
 int main()
 {
     const int cc=1;
-    int* p=&cc;
+    int* p=(int*)&cc;
     printf("%d\n",cc);
     *p=3;
     printf("%d\n",cc);
