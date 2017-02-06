@@ -1,4 +1,4 @@
-#define build1
+#define build2
 
 #ifdef build1
 #include <stdio.h>
@@ -16,9 +16,19 @@ int main()
 
 #ifdef build2
 #include <stdio.h>
-#include <malloc.c>
+#include <malloc.h>
+const int* func()
+{
+    static int count=0;
+    count++;
+    return &count;
+}
+
 int main()
 {
-    
+    int i=0;
+    const int* p=func();
+    printf("%d\n",*p);
+    return 0;
 }
 #endif
