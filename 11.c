@@ -1,4 +1,4 @@
-#define build2
+#define build3
 #ifdef build1
 #include <stdio.h>
 int main()
@@ -27,6 +27,24 @@ int main()
     printf("g1:%d\n",g);
     }
     printf("g2:%d\n",g);
+    printf("%d\n",!0);
+    printf("%d\n",!1);
+    printf("%d\n",!100);
+    return 0;
+}
+#endif
+#ifdef build3
+#include <stdio.h>
+int main()
+{
+    int a=1;
+    int b=2;
+    int c=0;
+    c=a<b?a:b;
+    *(a<b?&a:&b)=3;
+    printf("a=%d\n",a);
+    printf("b=%d\n",b);
+    printf("c=%d\n",c);
     return 0;
 }
 #endif
