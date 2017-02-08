@@ -1,4 +1,4 @@
-#define build1
+#define build2
 #ifdef build1
 #include <stdio.h>
 int main()
@@ -10,6 +10,23 @@ int main()
         printf("i=%d\n",i);
         printf("j=%d\n",j);
     }
+    return 0;
+}
+#endif
+#ifdef build2
+#include <stdio.h>
+int g=0;
+int f()
+{
+    return g++;
+}
+int main()
+{
+    if( f() && f())
+    {
+    printf("g1:%d\n",g);
+    }
+    printf("g2:%d\n",g);
     return 0;
 }
 #endif
