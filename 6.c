@@ -1,3 +1,5 @@
+#define build2
+#ifdef build1
 #include <stdio.h>
 #include <malloc.h>
 typedef struct _soft_array
@@ -54,4 +56,21 @@ int main()
     delete_soft_array(sa);
     return 0;
 }
+#endif
 
+#ifdef build2
+#include <stdio.h>
+#include <malloc.h>
+union C
+{
+    int i;
+    char c;
+};
+int main()
+{
+    union C cc;
+    cc.i=1;
+    printf("%d\n",cc.c);
+    return 0;
+}
+#endif
