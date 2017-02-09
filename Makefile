@@ -1,6 +1,6 @@
 all:1.o
 	gcc 1.o -o 1
-*.o:*.c
+%.o:%.c
 	gcc -c $^ -o $@
 .PHONE:clean
 clean:
