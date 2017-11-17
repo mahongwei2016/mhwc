@@ -1,4 +1,3 @@
-#define build2
 #ifdef build1
 #include <stdio.h>
 #include <malloc.h>
@@ -72,5 +71,21 @@ int main()
     cc.i=1;
     printf("%d\n",cc.c);
     return 0;
+}
+#endif
+#ifdef build3
+#include <stdio.h>
+#include <malloc.h>
+struct _null
+{
+};
+int main()
+{
+	struct _null n1;
+	struct _null n2;
+	printf("%d\n",sizeof(struct _null));
+	printf("%d %0x\n",sizeof(n1),&n1);
+	printf("%d %0x\n",sizeof(n2),&n2);
+	return 0;
 }
 #endif
